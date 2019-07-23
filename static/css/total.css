@@ -1,0 +1,14 @@
+body{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border: 0 0 0 0;
+}
+
+h1{
+    color:gold;
+}
+
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
