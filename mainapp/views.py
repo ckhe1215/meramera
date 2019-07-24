@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 # Create your views here.
@@ -12,7 +12,8 @@ def detail(request):
     return render(request, 'detail.html')
 
 def result(request):
-    return render(request, 'result.html')
+    posts = Post.objects
+    return render(request, 'result.html' , {'posts' : posts})
 
 def write(request):
     return render(request, 'write.html')
