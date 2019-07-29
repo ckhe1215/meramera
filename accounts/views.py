@@ -6,8 +6,6 @@ from .models import Profile
 from django.contrib import auth
 
 # Create your views here.
-@login_required
-@transaction.atomic
 def signup(request):
     if request.method == 'POST':
         # User has info and wants an account now!
