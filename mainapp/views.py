@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import render, get_object_or_404
+from .models import Post, Comment
 
 # Create your views here.
 def index(request):
@@ -8,11 +8,13 @@ def index(request):
 def search(request):
     return render(request, 'search.html')
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail(request, post_id):
+    post_detail=get_object_or_404(Post, pk=post_id)
+    return render(request, 'detail.html', {'post':post_detail})
 
 def result(request):
-    return render(request, 'result.html')
+    post = Post.objects
+    return render(request, 'result.html', {'post':post})
 
 def write(request):
     return render(request, 'write.html')
@@ -28,3 +30,16 @@ def review_detail(request):
 
 def review_write(request):
     return render(request, 'review/review_write.html')
+
+def add_comment(request, post_id):
+        post=get_object_or_404(Post, pk=post_id)
+        if request.method=='POST':
+                form=CommentForm(request.POST)
+                if form.is_valid():
+                        comment=form.save(commit=False)
+                        comment.post=post
+                        comment.save()
+                        return redirect('/post/' + str(post.id))
+                else:
+                        form=CommentForm()
+                return render(request, 'add_comment.html', {'form':form})
