@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
+from .forms import PostForm
 
 # Create your views here.
 def index(request):
@@ -16,7 +17,16 @@ def result(request):
     return render(request, 'result.html' , {'posts' : posts})
 
 def write(request):
-    return render(request, 'write.html')
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.pub_date = timezone.now()
+            post.save()
+            return redirect('result')
+        else:
+            form = PostForm()           
+            return render(request, 'write.html', {'form':form})
 
 def mypage(request):
     return render(request, 'mypage.html')

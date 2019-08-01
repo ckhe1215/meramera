@@ -4,8 +4,16 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/write.css' %}"/>
 
-<h1>total</h1>
-<h2>base</h2>
-<h3>write</h3>
+<br>
+<div class="container">
+    <form method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <br>
+        <input class="btn-btn-dark" type="submit" value="글올리기">
+    </form>
+</div>
 
 {% endblock %}
