@@ -1,10 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-<<<<<<< HEAD
-from .models import Post
-from .forms import PostForm
-=======
 from .models import Post, Comment
->>>>>>> a97cc16de7909ee4bd7693e39f0b50dcc227cb52
 
 # Create your views here.
 def index(request):
@@ -18,13 +13,8 @@ def detail(request, post_id):
     return render(request, 'detail.html', {'post':post_detail})
 
 def result(request):
-<<<<<<< HEAD
-    posts = Post.objects
-    return render(request, 'result.html' , {'posts' : posts})
-=======
     post = Post.objects
     return render(request, 'result.html', {'post':post})
->>>>>>> a97cc16de7909ee4bd7693e39f0b50dcc227cb52
 
 def write(request):
     if request.method == 'POST':
