@@ -6,8 +6,8 @@
 <link rel="stylesheet" type = "text/css" href="{% static '/css/write.css' %}"/>
 
 <br>
-<div class ="container">
-    <form method="POST" >
+<div class ="container" >
+    <form method="POST" action="{% url 'write' %}">
         {% csrf_token %}
         <table>
             {{form.as_table}} 

@@ -21,17 +21,16 @@ def result(request):
     return render(request, 'result.html', {'post':post})
 
 def write(request):
-    #if request.method == 'POST':
-        post = Post()
+    if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.pub_date = timezone.now()
             post.save()
-            return redirect('result')
-        else:
-            form = PostForm()           
-            return render(request, 'write.html', {'form':form})
+            return redirect('index')
+    else:
+        form = PostForm()           
+        return render(request, 'write.html', {'form':form})
 
 def mypage(request):
     return render(request, 'mypage.html')
