@@ -21,11 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainapp.views.index, name = 'index'),
     path('search/', mainapp.views.search, name = 'search'),
-<<<<<<< HEAD
-    path('detail/<int:post_id>/', mainapp.views.detail, name = 'detail'),
-=======
     path('<int:post_id>/', mainapp.views.detail, name = 'detail'),
->>>>>>> a97cc16de7909ee4bd7693e39f0b50dcc227cb52
     path('result/', mainapp.views.result, name = 'result'),
     path('write/', mainapp.views.write, name = 'write'),
     path('mypage/', mainapp.views.mypage, name = 'mypage'),
