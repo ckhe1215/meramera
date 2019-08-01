@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Comment
+from .forms import PostForm
 
 # Create your views here.
 def index(request):
@@ -17,7 +18,8 @@ def result(request):
     return render(request, 'result.html', {'post':post})
 
 def write(request):
-    if request.method == 'POST':
+    #if request.method == 'POST':
+        post = Post()
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
