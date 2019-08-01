@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainapp.views.index, name = 'index'),
     path('search/', mainapp.views.search, name = 'search'),
-    path('<int:post_id>/', mainapp.views.detail, name = 'detail'),
+    path('detail/<int:post_id>/', mainapp.views.detail, name = 'detail'),
     path('result/', mainapp.views.result, name = 'result'),
     path('write/', mainapp.views.write, name = 'write'),
     path('mypage/', mainapp.views.mypage, name = 'mypage'),
