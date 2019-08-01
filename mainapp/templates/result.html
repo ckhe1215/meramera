@@ -8,6 +8,7 @@
 <h2>base</h2>
 <h3>result</h3>
 
+<<<<<<< HEAD
 <div class="container">
     <table border="1">
     <tr>
@@ -29,4 +30,18 @@
     </table>
 </div>
 
+=======
+
+<div class="container">
+    {% for post in post.all%}
+        <h1>{{post.title}}</h1>
+        <p>{{post.author}}</p>
+        <p>{{post.pub_date}}</p>
+        <p><a href="{% url 'detail' post.id %}">...more</a></p>
+        
+    {%endfor%}
+</div>
+
+
+>>>>>>> a97cc16de7909ee4bd7693e39f0b50dcc227cb52
 {% endblock %}

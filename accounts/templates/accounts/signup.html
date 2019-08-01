@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
 <h1>회원가입</h1>
 
 <form method="POST" action = "{% url 'signup' %}">
@@ -17,6 +24,24 @@
     Confirm Password:
     <br>
     <input name="password2" type="password" value="">
+    <br>
+    Email:
+    <br>
+    <input name="email" type="email" value="">
+    <br>
+    Name:
+    <br>
+    <input name="name" type="text" value="">
+    <br>
+    Phone Number:
+    <br>
+    <input name="phone" type="text" value="">
+    
+    <br>주소:
+    시/도
+    <input name="sido" type="text" value="">
+    군/구
+    <input name="gungu" type="text" value="">
     <br>
     <br>
     <input type="submit" value="확인">
