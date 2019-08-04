@@ -4,8 +4,19 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/mypage.css' %}"/>
 
-<h1>total</h1>
-<h2>base</h2>
-<h3>mypage</h3>
+<div class = "container">
+    <hr>
+        <div>
+            <div class = "profile_img">
+                <img src = "{{ user.profile.profile_pic.url }}" width = 300px height= 300px>
+            </div>
+
+            <div class = "profile">
+                <p>{{ user.username }}</p>
+                <p>{{ user.profile.name }}</p>
+            </div>
+        </div>
+    <hr>
+</div>
 
 {% endblock %}
