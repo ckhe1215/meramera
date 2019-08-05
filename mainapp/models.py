@@ -19,8 +19,7 @@ class Post(models.Model) :
     def __str__(self):
       return self.title
 
-<<<<<<< HEAD
-=======
+
 class Comment(models.Model) :
     post = models.ForeignKey('mainapp.Post', on_delete=models.CASCADE, related_name = 'comments')
     text = models.TextField()
@@ -29,6 +28,5 @@ class Comment(models.Model) :
     def __str__(self):
         return self.text
 
->>>>>>> a62ebfbef2cd79acaffd688a976b41d27c4758a3
 
 

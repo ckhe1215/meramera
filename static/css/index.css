@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-.wrap {
-    margin: 0 auto;
-}
-=======
-h3{
-    color : pink;
-}
->>>>>>> a62ebfbef2cd79acaffd688a976b41d27c4758a3
+/* banner */
+.banner {padding: 80px 50px;}
+.banner h2 {font-size: 46px; line-height: 55px; font-weight: bold; color: rgb(14, 14, 14);}
+.banner p {font-size: 18px; font-weight: 300; color: rgb(120, 120, 120); padding: 20px 0px;}
+.banner .view {display: inline-block; font-size: 16px; margin-top: 35px; background-color: rgb(255, 255, 255); border-width: 1px;
+    border-style: solid; border-color: rgb(51, 51, 51); border-image: initial; padding: 12px 43px; transition: all 0.3s ease 0s;}
+.banner .view:hover{background-color:rgb(51, 51, 51); color:white; }

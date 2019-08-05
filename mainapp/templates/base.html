@@ -1,160 +1,121 @@
 {% load static %}
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
+    	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width-device-width">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>메라메라</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
-        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
-        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
-        <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
         <!-- main css -->
+        <link rel="stylesheet" href="static/css/reset.css">
         <link rel="stylesheet" href="static/css/total.css">
-        <link rel="stylesheet" href="static/css/style.css">
-        <link rel="stylesheet" href="static/css/responsive.css">
-    </head>
+        <link rel="stylesheet" href="static/css/base.css">
+        <link rel="stylesheet" href="static/css/index.css">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="static/img/favicon.png">
+</head>
 
-    <body>
-        <!--================Start Header Menu Area =================-->
-        <header class="header_area">
-           	<div class="top_menu row m0">
-           		<div class="container">
-					<div class="float-left">
-						<ul class="list header_social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance"></i></a></li>
-						</ul>
-					</div>
-					<div class="float-right">
-                        
-                        
-
-					</div>
-           		</div>	
-               </div>	
-               
-            <div class="main_menu">
-            	<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="static/img/logo.png" alt=""></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-                        </button>
-                        
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="service.html">구매 게시판</a>
-                                    <li class="nav-item"><a class="nav-link" href="service.html">판매 게시판</a>
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">리뷰 게시판</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="projects.html">가</a>
-										<li class="nav-item"><a class="nav-link" href="elements.html">나</a></li>
-									</ul>
-								</li> 
-								<li class="nav-item"><a class="nav-link" href="contact.html">고객센터</a></li>
-							</ul>
-						</div> 
-					</div>
-            	</nav>
-            </div>
-        </header>
-        <!--================End Header Menu Area =================-->
-
-        <!-- 본문 -->
-        <div class="wrap">
-            {% block content %}
-            {% endblock %}
-        </div>
-
-        <!--================ Start footer Area  =================-->	
-        <footer class="footer-area p_120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3  col-md-6 col-sm-6">
-                    <div class="single-footer-widget ab_wd">
-                        <h6 class="footer_title">About Us</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+<body>
+        <div id="wrap">
+            <!--=====Start Header Area ====-->
+            <header id="header">
+                <div class="container">
+                    <div class="header clearfix">
+                        <ul class="theme_menu clearfix">
+                            <li class="purple"><a href="#">전체메뉴</a></li>
+                            <li><a href="#">용도로찾기</a></li>
+                            <li><a href="#">장소로찾기</a></li>
+                        </ul>
+                        <ul class="user_menu clearfix">
+                                <li class="log"><a href="#">회원가입</a></li>
+                                <li class="log"><a href="#">로그인</a></li>
+                                <li><a href="#">마이페이지</a></li>
+                                <li><a href="#">장바구니</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-footer-widget contact_wd">
-                        <h6 class="footer_title">Contact Us</h6>
-                        <p>56/8, Santa Monica bullevard, Los angeles, california, United states of america</p>				
-                    </div>
-                </div>							
-                <div class="col-lg-5 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="single-footer-widget">
-                        <h6 class="footer_title">Newsletter</h6>
-                        <p>You can trust us. we only send promo offers, not a single spam.</p>		
-                        <div id="mc_embed_signup">
-                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                <div class="input-group d-flex flex-row">
-                                    <input name="EMAIL" placeholder="Your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                    <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                </div>									
-                                <div class="mt-10 info"></div>
-                            </form>
+            </header>
+            <!--=====End Header Area ====-->
+          
+            <!--=====Start Nav Area ====-->
+            <nav id="nav">
+                <div class="container">
+                    <div class="nav clearfix">
+                        <ul class="gnb clearfix">
+                            <li>
+                                <h1>
+                                    <a href="#">
+                                        <em><img src="static/img/logo.png" alt="MERAMERA"></em>
+                                    </a>
+                                </h1>
+                            </li>
+    
+                            <li>
+                                <div class="search_wrap">
+                                        <div class="search">
+                                            <input type="text" class="searchTerm" placeholder="키워드로 상품 찾기">
+                                            <button type="submit" class="searchButton">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                </div>
+                            </li>
+                        </ul>         
+                        
+                        <ul class="gnb_menu clearfix">
+                            <li><a href="#">회사소개</a></li>
+                            <li><a href="#">구매게시판</a></li>
+                            <li><a href="#">판매게시판</a></li>
+                            <li><a href="#">리뷰게시판</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>   
+                    </div>   
+                </div>
+            </nav>
+            <!--=====End Nav Area ====-->
+        
+
+            <!--=====Start index.html Area ====-->
+            {% block content %}      
+            {% endblock %}
+            <!--=====End index.html Area ====-->
+
+
+            <!--=====Start Footer Area ====-->
+            <footer id="footer">
+                <div id="footer_info">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer_info">
+                                <h2><img src="static/img/footer_logo.png" alt="meramera"></h2>
+                                <ul>
+                                    <li><a href="#">회사소개</a></li>
+                                    <li><a href="#">제휴/광고/부대사업 문의</a></li>
+                                    <li><a href="#">이용약관</a></li>
+                                    <li><a href="#">개인정보처리방침</a></li>
+                                    <li><a href="#">특정상거래법에 근거한 표기</a></li>
+                                </ul>
+                                <div class="address">
+                                    <p>서울특별시 강남구 도곡동 467-17</p>
+                                    <p>Like Lion 7th  |  MERAMERA  |  김하은, 김지현, 박지형, 이지민</p>
+                                    <p>　</p>
+                                    <p>Copyright 2019 by MERAMERA, Inc. All rights reserved</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                    <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    <div class="col-lg-4 col-md-4 footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
-                </div>
-            </div>
-		</footer>
-	</section>
-		<!--================ End footer Area  =================-->
-        
-=======
-<html>
-    <head>
-        <title>메라메라</title>
-        <link rel="stylesheet" type = "text/css" href="{% static '/css/total.css' %}"/>
-        <link rel="stylesheet" type = "text/css" href="{% static '/css/base.css' %}"/>
-    </head>
-
-    <body>
-        
-        <!-- 상단바 -->
-        <div class="nav">
-
+            </footer>
+             <!--=====End Footer Area ====-->
         </div>
+           
 
-        <!-- 본문 -->
-        <div class="container">
-            {% block content %}
-            {% endblock %}
-        </div>
-        
 
->>>>>>> a62ebfbef2cd79acaffd688a976b41d27c4758a3
+        <!-- javaScirpt Library-->   
+        <script src ="static/js/jquery.min_1.12.4.js"></script>
+        <script src ="static/js/modernizr-custom.js"></script>
+        <script src ="static/js/ie-checker.js"></script>
     </body>
 </html>
-
