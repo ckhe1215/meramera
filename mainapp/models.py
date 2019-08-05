@@ -13,6 +13,7 @@ class Post(models.Model) :
     use = models.TextField() #용도
     region_sido = models.CharField(max_length = 10) #지역(시/도)
     region_sigungu = models.CharField(max_length = 10) #지역(군/구)
+    region_rest = models.CharField(max_length = 20) #지역(남은 주소)
     sort = models.CharField(max_length = 10) #기종(캠코더/DSLR/미러리스)
     
     def __str__(self):
