@@ -51,6 +51,7 @@ def add_comment(request, post_id):
             form=CommentForm(request.POST)
             if form.is_valid():
                     comment=form.save(commit=False)
+					
                     comment.post=post
                     comment.save()
                     return redirect('/post/' + str(post.id))
