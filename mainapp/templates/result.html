@@ -9,4 +9,15 @@
 <h3>result</h3>
 
 
+<div class="container">
+    {% for post in post.all%}
+        <h1>{{post.title}}</h1>
+        <p>{{post.author}}</p>
+        <p>{{post.pub_date}}</p>
+        <p><a href="{% url 'detail' post.id %}">...more</a></p>
+        
+    {%endfor%}
+</div>
+
+
 {% endblock %}

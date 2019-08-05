@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from .models import Post
 from django.shortcuts import render, get_object_or_404
@@ -12,14 +13,6 @@ def index(request):
 def search(request):
     return render(request, 'search.html')
 
-def detail(request):
-    return render(request, 'detail.html')
-
-def result(request):
-    return render(request, 'result.html')
-
-def write(request):
-    return render(request, 'write.html')
 
 def detail(request, post_id):
     post_detail=get_object_or_404(Post, pk=post_id)
@@ -30,18 +23,16 @@ def result(request):
     return render(request, 'result.html', {'post':post})
 
 def write(request):
-    #if request.method == 'POST':
-        post = Post()
+    if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.pub_date = timezone.now()
             post.save()
             return redirect('result')
-        else:
-            form = PostForm()           
-            return render(request, 'write.html', {'form':form})
-
+    else:
+        form = PostForm()           
+        return render(request, 'write.html', {'form':form})
 
 def mypage(request):
     return render(request, 'mypage.html')
@@ -66,4 +57,5 @@ def add_comment(request, post_id):
                         return redirect('/post/' + str(post.id))
                 else:
                         form=CommentForm()
+
                 return render(request, 'add_comment.html', {'form':form})

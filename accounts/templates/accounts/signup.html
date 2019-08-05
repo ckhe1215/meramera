@@ -11,7 +11,7 @@
 
 <h1>회원가입</h1>
 
-<form method="POST" action = "{% url 'signup' %}">
+<form method="POST" action = "{% url 'signup' %}" enctype = "multipart/form-data" >
     {% csrf_token %}
     Username:
     <br>
@@ -36,7 +36,10 @@
     Phone Number:
     <br>
     <input name="phone" type="text" value="">
-    
+    <br>
+    프로필 사진
+    <br>
+    <input name="profile_pic" type="file">
     <br>주소:
     시/도
     <input name="sido" type="text" value="">

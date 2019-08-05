@@ -20,7 +20,7 @@ def signup(request):
                 phone = request.POST['phone']
                 region_sido = request.POST['sido']
                 region_sigungu = request.POST['gungu']
-                profile = Profile(user = user, name = name, phone = phone, region_sido = region_sido, region_sigungu = region_sigungu)
+                profile = Profile(user = user, name = name, phone = phone, region_sido = region_sido, region_sigungu = region_sigungu, profile_pic = request.FILES['profile_pic'])
                 profile.save()
                 auth.login(request, user)
                 return redirect('index')

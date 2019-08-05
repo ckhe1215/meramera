@@ -1,3 +1,16 @@
-h3{
-    color : pink;
+.container {
+    margin : 0 auto;
+    width : 960px;
+}
+
+.profile{
+   
+}
+
+.myPost{
+    height: 300px;
+}
+
+.myComment{
+    height: 300px;
 }
