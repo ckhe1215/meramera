@@ -1,9 +1,10 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Post
+from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Comment
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 
 
 # Create your views here.
@@ -29,10 +30,10 @@ def write(request):
             post = form.save(commit=False)
             post.pub_date = timezone.now()
             post.save()
-            return redirect('result')
+        return redirect('index')
     else:
         form = PostForm()           
-        return render(request, 'write.html', {'form':form})
+    return render(request, 'write.html', {'form':form})
 
 def mypage(request):
     return render(request, 'mypage.html')
