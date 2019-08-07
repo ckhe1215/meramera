@@ -13,19 +13,20 @@ class Post(models.Model) :
     use = models.TextField() #용도
     region_sido = models.CharField(max_length = 10) #지역(시/도)
     region_sigungu = models.CharField(max_length = 10) #지역(군/구)
+    region_rest = models.CharField(max_length = 20) #지역(남은 주소)
     sort = models.CharField(max_length = 10) #기종(캠코더/DSLR/미러리스)
     
-
     def __str__(self):
       return self.title
 
 class Comment(models.Model) :
     post = models.ForeignKey('mainapp.Post', on_delete=models.CASCADE, related_name = 'comments')
+    author = models.CharField(max_length = 200)
     text = models.TextField()
     created_date = models.DateTimeField(default = timezone.now)
+    is_secret = models.BooleanField()
+    is_accepted = models.BooleanField()
 
     def __str__(self):
         return self.text
-
-
 
