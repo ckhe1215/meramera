@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="{% static '/css/total.css' %}">
         <link rel="stylesheet" href="{% static '/css/base.css' %}">
         <link rel="stylesheet" href="{% static '/css/index.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- favicon -->
-        <link rel="shortcut icon" href="{% static '../img/favicon.png' %}">
+        <link rel="shortcut icon" href="{% static '/img/favicon.png' %}">
 </head>
 
 <body>
@@ -29,9 +30,9 @@
                             <li><a href="#">장소로찾기</a></li>
                         </ul>
                         <ul class="user_menu clearfix">
-                                <li class="log"><a href="#">회원가입</a></li>
-                                <li class="log"><a href="#">로그인</a></li>
-                                <li><a href="#">마이페이지</a></li>
+                                <li class="log"><a href="{% url 'signup' %}">회원가입</a></li>
+                                <li class="log"><a href="{% url 'login' %}">로그인</a></li>
+                                <li><a href="{% url 'mypage' %}">마이페이지</a></li>
                                 <li><a href="#">장바구니</a></li>
                         </ul>
                     </div>
@@ -46,8 +47,8 @@
                         <ul class="gnb clearfix">
                             <li>
                                 <h1>
-                                    <a href="#">
-                                        <em><img src="static/img/logo.png" alt="MERAMERA"></em>
+                                    <a href="{% url 'index' %}">
+                                        <em><img src="{% static '/img/logo.png' %}" alt="MERAMERA"></em>
                                     </a>
                                 </h1>
                             </li>
@@ -65,10 +66,11 @@
                         </ul>         
                         
                         <ul class="gnb_menu clearfix">
-                            <li><a href="#">회사소개</a></li>
+                            <li><a href="{% url 'index' %}">HOME</a></li>
+                            <li><a href="#">특징</a></li>
+                            <li><a href="#">이용방법</a></li>
                             <li><a href="#">구매게시판</a></li>
                             <li><a href="#">판매게시판</a></li>
-                            <li><a href="#">리뷰게시판</a></li>
                             <li><a href="#">고객센터</a></li>
                         </ul>   
                     </div>   
@@ -89,7 +91,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="footer_info">
-                                <h2><img src="static/img/footer_logo.png" alt="meramera"></h2>
+                                <h2><img src="{% static '/img/footer_logo.png' %}" alt="meramera"></h2>
                                 <ul>
                                     <li><a href="#">회사소개</a></li>
                                     <li><a href="#">제휴/광고/부대사업 문의</a></li>

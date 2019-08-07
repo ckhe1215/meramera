@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
     
-{% block content %}   
+{% block content %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}">
+
+
  	<!--=====Start Banner Area ====-->
     <section id="banner">
         <div class="container">
@@ -18,46 +21,142 @@
     </div>
     <!--=====End Banner Area ====-->
 
-    <!--=====Start Contents Area ====-->
-    <div id="contents">
-        <div id="cont_hot">
-            <div class="container">
-                <div class=cont_hot>
-                    <h3>인기 품목</h3>
+    <!--=====Start Cont_hot Area ====-->
+    <div id="cont-hot">
+        <div class="container">
+            <div class=cont-hot>
+                <h3>인기 품목</h3>
+                
+                
                     
-                    <div class="card_wrap">
-                    <a class="card-link " data-event-label="36292953" href="#">
-
-                        <div class="card-photo">
-                            <img alt="#" src="#;>
-                        </div>
-
-                        <div class="card-desc">
-                            <h2 class="card-title">글제목</h2>
-                            <div class="card-region-name">서울 강남구 수서동</div>
-                            <div class="card-price ">무료나눔</div>
-                            <div class="card-counts">
-                              <span>관심 7</span>.
-                              <span>댓글 7</span>.
-                            </div>
-                        </div>
-                    </a>
-                   </div>
-
-                </div>
-            </div>
-        </div>
-     
-        <div id="cont_review">
-            <div class="container">
-                <h3>실제 리뷰</h3>
-
-
             </div>
         </div>
     </div>
-    <!--=====End contents Area ====-->
+    <!--=====End Cont_hot Area ====-->
 
-                  
+    <!--=====Start Cont_appstore Area ====-->
+    <div id="cont-appstore">
+            <div class="container">
+                <div class=cont-appstore>
+                    
+                    
+                        
+                </div>
+            </div>
+        </div>
 
+    <!--=====End Cont_appstore Area ====-->
+   
+    <!--=====Start Cont_reivew Area ====-->
+    <div id="cont-review">
+        <div class=cont-reivew>
+                <h3 clsss="slider-title">이용자 리뷰</h3>
+                <i class="fas fa-angle-left prev"></i>
+                <i class="fas fa-angle-right next"></i>
+    
+                <div class="slider">
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User1">
+                            </div>
+                            <div class="personName">
+                                    <h4>User1</h4>
+                                </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User2">
+                            </div>
+                            <div class="personName">
+                                <h4>User2</h4>
+                            </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User3">
+                            </div>
+                            <div class="personName">
+                                <h4>User3</h4>
+                            </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User4">
+                            </div>
+                            <div class="personName">
+                                <h4>User4</h4>
+                            </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User5">
+                            </div>
+                            <div class="personName">
+                                <h4>User5</h4>
+                                </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="slider-cell">
+                        <div class="single-person">
+                            <div class="personIMG">
+                                <img src="static/img/index/no-profile.jpg" alt="User6">
+                            </div>
+                            <div class="personName">
+                                <h4>User6</h4>
+                            </div>
+                            <div class="personquote">
+                                <p>대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다. 대표후기가 나타납니다.</p><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>                            
+                
+            
+        </div>
+    </div>
+    
+<!-- JQuery -->
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<!-- Slick Carousel -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $('.slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: $('.next'),
+    prevArrow: $('.prev'),
+    });
+</script>
 {% endblock %}
