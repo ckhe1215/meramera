@@ -15,7 +15,7 @@
     </p>
     
 
-    <form action="" method="POST">
+    <form action="{% url 'edit' post.id %}" method="POST">
         {% csrf_token %}
         <input type="submit" value="수정하기">
     </form>

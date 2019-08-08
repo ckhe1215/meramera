@@ -39,6 +39,20 @@ def delete(request, post_id):
 	post_detail.delete()
 	return redirect('result')
 
+def edit(request, post_id):
+	post_detail = get_object_or_404(Post, pk=post_id)
+	if request.method == 'POST':
+		form = PostForm(request.POST, instance = post_detail)
+		if form.is_valid():
+			post = form.save(commit=False)
+			post.pub_date = timezone.now()
+			post.author = request.user()
+			post.save()
+			return redirect('detail')
+		else:
+			form=PostForm(instance=post_detail)
+			return render(request, 'write.html',{'form':form})
+
 def mypage(request):
 	user = request.user
 	mypost = Post.objects.filter(author = user)
