@@ -29,12 +29,19 @@
                             <li><a href="#">용도로찾기</a></li>
                             <li><a href="#">장소로찾기</a></li>
                         </ul>
-                        <ul class="user_menu clearfix">
-                                <li class="log"><a href="{% url 'signup' %}">회원가입</a></li>
-                                <li class="log"><a href="{% url 'login' %}">로그인</a></li>
+
+                        {% if user.is_authenticated %}
+                            <ul class="user_menu clearfix">
+                                <li class="log"><a href="{% url 'logout' %}">로그아웃</a></li>
                                 <li><a href="{% url 'mypage' %}">마이페이지</a></li>
                                 <li><a href="#">장바구니</a></li>
+                            </ul>
+                        {% else %}
+                        <ul class="user_menu clearfix">
+                            <li class="log"><a href="{% url 'signup' %}">회원가입</a></li>
+                            <li class="log"><a href="{% url 'login' %}">로그인</a></li>
                         </ul>
+                        {% endif %}
                     </div>
                 </div>
             </header>

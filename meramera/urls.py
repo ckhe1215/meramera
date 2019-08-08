@@ -14,6 +14,7 @@ urlpatterns = [
     path('write/', mainapp.views.write, name = 'write'),
     path('mypage/', mainapp.views.mypage, name = 'mypage'),
     path('<int:post_id>/comments/', mainapp.views.add_comment, name='add_comment'),
+    path('<int:post_id>/delete_comment/<int:comment_id>/', mainapp.views.delete_comment, name = 'delete_comment'),
     path('review_board/', mainapp.views.review_board, name = 'review_board'),
     path('review_detail/', mainapp.views.review_detail, name = 'review_detail'),
     path('review_write/', mainapp.views.review_write, name = 'review_write'),
