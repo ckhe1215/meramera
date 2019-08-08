@@ -42,16 +42,16 @@ def delete(request, post_id):
 
 def edit(request, post_id):
 	post = get_object_or_404(Post, pk=post_id)
-	if request.method == 'POST':
-		form = PostForm(request.POST, request.FILES, instance = post)
+	if request.method == "POST":
+		form = PostForm(request.POST, request.FILES, instance=post)
 		if form.is_valid():
 			post = form.save(commit=False)
 			post.pub_date = timezone.now()
 			post.author = request.user
 			post.save()
 			return redirect('/detail/'+str(post.id))
-		else:
-			form=PostForm(instance=post)
+	else:
+		form=PostForm(instance=post)
 		return render(request, 'write.html', {'form':form})
 
 def mypage(request):
