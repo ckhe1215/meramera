@@ -5,6 +5,7 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 
+
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -35,23 +36,23 @@ def write(request):
 		return render(request, 'write.html', {'form':form})
 
 def delete(request, post_id):
-	post_detail = get_object_or_404(Post, pk=post_id)
-	post_detail.delete()
+	post = get_object_or_404(Post, pk=post_id)
+	post.delete()
 	return redirect('result')
 
 def edit(request, post_id):
-	post_detail = get_object_or_404(Post, pk=post_id)
+	post = get_object_or_404(Post, pk=post_id)
 	if request.method == 'POST':
-		form = PostForm(request.POST, instance = post_detail)
+		form = PostForm(request.POST, request.FILES, instance = post)
 		if form.is_valid():
 			post = form.save(commit=False)
 			post.pub_date = timezone.now()
-			post.author = request.user()
+			post.author = request.user
 			post.save()
-			return redirect('detail')
+			return redirect('/detail/'+str(post.id))
 		else:
-			form=PostForm(instance=post_detail)
-			return render(request, 'write.html',{'form':form})
+			form=PostForm(instance=post)
+		return render(request, 'write.html', {'form':form})
 
 def mypage(request):
 	user = request.user
@@ -80,7 +81,7 @@ def add_comment(request, post_id):
 			return redirect('/detail/' + str(post.id))
 		else:
 			form=CommentForm()
-		return render(request, 'add_comment.html', {'form':form})
+			return render(request, 'add_comment.html', {'form':form})
 
 def delete_comment(request, post_id, comment_id):
 	post = get_object_or_404(Post, pk = post_id)
