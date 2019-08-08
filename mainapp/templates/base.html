@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{% static '/css/base.css' %}">
         <link rel="stylesheet" href="{% static '/css/index.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <!-- favicon -->
         <link rel="shortcut icon" href="{% static '/img/favicon.png' %}">
 </head>
@@ -55,19 +56,20 @@
     
                             <li>
                                 <div class="search_wrap">
-                                        <div class="search">
-                                            <input type="text" class="searchTerm" placeholder="키워드로 상품 찾기">
-                                            <button type="submit" class="searchButton">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
+                                    <form action="." method="post" class="search">
+                                        {% csrf_token %}
+                                        {{ form.as_table }}
+                                        <input type="text" class="searchTerm" placeholder="키워드로 상품 찾기">
+                                        <button type="submit" class="searchButton">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </li>
                         </ul>         
                         
                         <ul class="gnb_menu clearfix">
                             <li><a href="{% url 'index' %}">HOME</a></li>
-                            <li><a href="#">특징</a></li>
                             <li><a href="#">이용방법</a></li>
                             <li><a href="#">구매게시판</a></li>
                             <li><a href="#">판매게시판</a></li>

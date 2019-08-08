@@ -11,3 +11,6 @@ class CommentForm(forms.ModelForm):
     class Meta:
         models = Comment
         fields = ('text', )
+
+class PostSearchForm(forms.Form):
+    search_word = forms.CharField(label='Search Word')

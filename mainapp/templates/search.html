@@ -4,8 +4,33 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/search.css' %}"/>
 
-<h1>total</h1>
-<h2>base</h2>
-<h3>search</h3>
+ <!--=====Start search_banner Area ====-->
+<section id="search_banner">
+    <div class="container">
+        <div class="search_banner">
+            {% if object_list %}
+            {% for post in object_list %}
+                <h3><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a> 검색결과</h3>
+            {% endfor %}
+
+            {% elif search_term %}
+                <h3><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a> 의 검색결과가 존재하지 않습니다.</h3>
+            {% endif %}
+        </div>
+    </div>
+</section>
+ <!--=====End search_banner Area ====-->
+
+
+ <!--=====Start cont_search Area ====-->
+<section id="cont_serach">
+    <div class="container">
+        <div class="cont_search">
+        
+
+        </div>
+    </div>
+</section>
+<!--=====End cont_search Area ====-->
 
 {% endblock %}
