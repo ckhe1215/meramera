@@ -13,6 +13,7 @@ urlpatterns = [
     path('result/', mainapp.views.result, name = 'result'),
     path('write/', mainapp.views.write, name = 'write'),
     path('mypage/', mainapp.views.mypage, name = 'mypage'),
+    path('detail/<int:post_id>/delete', mainapp.views.delete, name='delete'),
     path('<int:post_id>/comments/', mainapp.views.add_comment, name='add_comment'),
     path('<int:post_id>/delete_comment/<int:comment_id>/', mainapp.views.delete_comment, name = 'delete_comment'),
     path('review_board/', mainapp.views.review_board, name = 'review_board'),

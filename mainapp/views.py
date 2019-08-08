@@ -34,6 +34,11 @@ def write(request):
 		form = PostForm()           
 		return render(request, 'write.html', {'form':form})
 
+def delete(request, post_id):
+	post_detail = get_object_or_404(Post, pk=post_id)
+	post_detail.delete()
+	return redirect('result')
+
 def mypage(request):
 	user = request.user
 	mypost = Post.objects.filter(author = user)
