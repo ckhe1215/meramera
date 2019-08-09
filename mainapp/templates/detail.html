@@ -4,27 +4,21 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/detail.css' %}"/>
 
-<h1>total</h1>
-<h2>base</h2>
-<h3>detail</h3>
-
 <div class="container">
-    <br>
-    <h1>상세페이지입니다.</h1>
-    <h2>여기에 이제 글쓴 내용 </h2>
-    <h2>{{post.title}}</h2>
-    <p>
-        {{post.author}}
-        {{post.pub_date}}
-    </p>
+    
+        <h2>{{post.title}}</h2>
+        <h4>{{post.author}}</h4>
+        <h4>{{post.pub_date}}</h4>
     
 
-    <form action="" method="POST">
+    
+
+    <form action="{% url 'edit' post.id %}" >
         {% csrf_token %}
         <input type="submit" value="수정하기">
     </form>
 
-    <form action="" method="POST">
+    <form action="{% url 'delete' post.id %}" method="POST">
         {% csrf_token %}
         <input type="submit" value="삭제하기">
     </form>
@@ -34,22 +28,25 @@
     <hr>
     <form action="{% url 'add_comment' post.id %}" method="POST" class="post-form">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" class="btn btn-dark" value="Add Comment"><br><br>
+        <input type="submit" class="btn" value="Add Comment"><br><br>
     </form>
     {% for comment in post.comments.all %}
         <div class="comment">
             <div class="date">{{comment.created_date}}</div>
             <strong>{{comment.author}}</strong>
             <p>{{comment.text|linebreaks}}</p>
-            <a href="">삭제</a>
-        </div>
 
+            <form method="POST" action="{% url 'delete_comment' post.id comment.id %}">
+                {% csrf_token %}
+                <input style="background-color: #fa5a5a;" type = "submit" class = "btn" value="삭제"/>
+            </form>
+        </div>
     {% empty %}
         <p>No comments here yet</p>
     {% endfor %}
 
 
 </div>
+
 
 {% endblock %}

@@ -37,14 +37,12 @@
     <div class = "myPost">
         <h3>내가 쓴 글</h3>
         <table>
-            {% for post in post.all%}
-                {% if post.author == user.profile.username %}
-                    <tr>
-                        <td>{{post.title}}</td>
-                        <td>{{post.pub_date}}</td>
-                    </tr>
-                {% endif %}
-            {%endfor%}
+            {% for post in mypost.all%}
+                <tr>
+                    <td>{{post.title}}</td>
+                    <td>{{post.pub_date}}</td>
+                </tr>
+            {% endfor %}
         </table> 
     </div>
     <hr>
@@ -52,14 +50,12 @@
     <div class = "myComment">
         <h3>내가 쓴 댓글</h3>
         <table>
-                {% for post in post.all%}
-                    {% if post.author == user.profile.username %}
-                        <tr>
-                            <td>{{post.title}}</td>
-                            <td>{{post.pub_date}}</td>
-                        </tr>
-                    {% endif %}
-                {%endfor%}
+                {% for comment in mycomment.all %}
+                    <tr>
+                        <td>{{comment.post.title}}</td>
+                        <td>{{comment.text}}</td>
+                    </tr>
+                {% endfor %}
             </table> 
     </div>
 </div>

@@ -4,19 +4,24 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/result.css' %}"/>
 
-<h1>total</h1>
-<h2>base</h2>
-<h3>result</h3>
-
-
 <div class="container">
-    {% for post in post.all%}
-        <h1>{{post.title}}</h1>
-        <p>{{post.author}}</p>
-        <p>{{post.pub_date}}</p>
-        <p><a href="{% url 'detail' post.id %}">...more</a></p>
-        
-    {%endfor%}
+    <table>
+        <tr>
+            <td style="width : 5%">번호</td>
+            <td style="width : 50%">제목</td>
+            <td style="width : 15%">작성자</td>
+            <td style="width : 20%">작성일</td>
+        </tr>
+
+        {% for post in post.all%}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td><a href="{% url 'detail' post.id %}">{{ post.title }}</a></td>
+            <td>{{ post.author }}</td>
+            <td>{{ post.pub_date|date:"Y-m-d" }}</td>
+        </tr>
+        {%endfor%}
+    </table>
 </div>
 
 
