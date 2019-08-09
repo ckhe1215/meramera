@@ -7,14 +7,29 @@
 .banner .view:hover{background-color:rgb(51, 51, 51); color:white; }
 
 /* cont-hot */
-.cont-hot{}
+.cont-hot {position: relative;}
 .cont-hot h3 {font-size: 30px; font-weight: bold; text-align: center; margin: 100px 0;}
+.cont-hot .prev {position: absolute; top: 57%; left: -50px;}
+.cont-hot .next {position: absolute; top: 57%; right: -50px;}
+
+.cont-hot .ctg-menu {float: left;}
+.cont-hot .ctg-menu li {float: left;}
+.cony-hot .ctg-menu li a {display: block; background: ##EEEEEE; border-radius: 3px;
+ font-size: 13px; color: rgb(51, 51, 51); padding: 7px 15px 10px; margin: 6px 0px;}
+.cont-hot .ctg-menu li a:hover {color: white; background: #3F3440;}
+
+.cont-hot .hlider {width: 100%; height:170px; margin: 0 auto 10px auto; overflow: hidden;}
+.cont-hot .hlider .hlider-cell {width: 130px; height: 150px; display: inline-block; margin: 10px 20px;
+    box-shadow: 0 2px 2px 2px rgba(250, 214, 250, 0.5), 0 6px 10px 0 rgba(82, 67, 77, 0.19);}
+
+.cont .total-menu {}
+.cont-hot .total-menu .view {display: inline-block; font-size: 16px; background-color: rgb(255, 255, 255); border-width: 1px;
+    border-style: solid; border-color: #EEEEEE; border-image: initial; color: #666666; padding: 12px 43px; transition: all 0.3s ease 0s;}
+.cont-hot .total-menu .view:hover{background-color:#EEEEEE;}
 
 
 /* cont-appstore */
 .cont-appstore  {}
-
-
 
 /* cont-review */
 .cont-reivew {position: relative;}

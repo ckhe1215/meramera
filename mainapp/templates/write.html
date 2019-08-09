@@ -1,19 +1,21 @@
-
 {% extends 'base.html' %}
 {% load static %}
     
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/write.css' %}"/>
 
-<div class ="container" >
-    <form method="POST" action="{% url 'write' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        <table>
-            {{form.as_table}} 
-        </table>
-        <br>
-        <input class="btn btn-dark" type="submit" value="제출하기">
-    </form>
-</div>
-
+<section id="write">
+    <div class="container" >
+        <div class="write">
+            <form method="POST" action="{% url 'write' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table">
+                    {{form.as_table}} 
+                </table>
+                <br>
+                <input class="btn btn-dark" type="submit" value="제출하기">
+            </form>
+        </write>
+    </div>
+</section>
 {% endblock %}

@@ -10,7 +10,7 @@
     background-size: cover;
     border-bottom: 1px solid #EFEFEF;
 }
-#cont-hot {width: 100%; height: 540px;}
+#cont-hot {width: 100%; height: 400px;}
 #cont-appstore {width: 100%; height: 370px; background: url("../img/banner/badge.png") no-repeat center top; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
