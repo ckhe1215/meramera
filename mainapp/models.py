@@ -10,9 +10,10 @@ class Post(models.Model) :
     body = models.TextField() #내용
     rent_date = models.CharField(max_length =200) #대여가능일
     price = models.PositiveIntegerField() #가격
-    choice_parcel = models.BooleanField() #택배가능여부
+    PARCEL_CHOICES = [('가능','가능'),('불가능','불가능')]
+    choice_parcel = models.CharField(max_length=10, choices=PARCEL_CHOICES, default='가능') #택배가능여부
     use = models.TextField() #용도
-    REGION_SIDO_CHOICES = [('Seoul','서울특별시'),('Busan','부산광역시'),('Daegu','대구광역시'),('Incheon','인천광역시'),('Gwangju','광주광역시'),('Daejeon','대전광역시'),('Ulsan','울산광역시'),('Sejong','세종특별자치시'),('Gyeonggi','경기도'),('Gangwon','강원도'),('Chungbuk','충청북도'),('Chungnam','충청남도'),('Jeonbuk','전라북도'),('Jeonnam','전라남도'),('Gyeongbuk','경상북도'),('Gyeongnam','경상남도'),('Jeju','제주특별자치도')]
+    REGION_SIDO_CHOICES = [('서울특별시','서울특별시'),('부산광역시','부산광역시'),('대구광역시','대구광역시'),('인천광역시','인천광역시'),('광주광역시','광주광역시'),('대전광역시','대전광역시'),('울산광역시','울산광역시'),('세종특별자치시','세종특별자치시'),('경기도','경기도'),('강원도','강원도'),('충청북도','충청북도'),('충청남도','충청남도'),('전라북도','전라북도'),('전라남도','전라남도'),('경상북도','경상북도'),('경상남도','경상남도'),('제주특별자치도','제주특별자치도')]
     region_sido = models.CharField(max_length=30, choices=REGION_SIDO_CHOICES, default= "==========")  #지역(시/도)
     region_sigungu = models.CharField(max_length = 10) #지역(군/구)
     region_rest = models.CharField(max_length = 20) #지역(남은 주소)
