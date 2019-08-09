@@ -15,7 +15,6 @@ def index(request):
 def search(request):
     return render(request, 'search.html')
 
-
 def detail(request, post_id):
     post_detail=get_object_or_404(Post, pk=post_id)
     return render(request, 'detail.html', {'post':post_detail})

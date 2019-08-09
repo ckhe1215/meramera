@@ -1,3 +1,6 @@
+/* 레이아웃 */
+.container {height: 600px;}
+
 table{
     width: 960px;
     margin: 50px auto;
