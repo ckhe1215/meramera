@@ -21,4 +21,5 @@ urlpatterns = [
     path('review_detail/', mainapp.views.review_detail, name = 'review_detail'),
     path('review_write/', mainapp.views.review_write, name = 'review_write'),
     path('accounts/', include('accounts.urls')),
+    path('search/', mainapp.views.searchFormView, name = 'search')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

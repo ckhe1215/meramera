@@ -3,6 +3,7 @@
     
 {% block content %}
 <link rel="stylesheet" href="{% static '/css/index.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
 
 
  	<!--=====Start Banner Area ====-->
@@ -25,9 +26,47 @@
     <div id="cont-hot">
         <div class="container">
             <div class=cont-hot>
-                <h3>인기 품목</h3>
-                
-                
+                <h3>카테고리별 인기 상품</h3>
+                <i class="fas fa-angle-left prev"></i>
+                <i class="fas fa-angle-right next"></i>
+
+                <ul class="ctg-menu clearfix">
+                        <li><a href="#">카메라1</a></li>
+                        <li><a href="#">카메라2</a></li>
+                        <li><a href="#">카메라3</a></li>
+                        <li><a href="#">카메라4</a></li>
+                        <li><a href="#">기타</a></li>
+                </ul>
+
+                <div class="hlider">
+                    <div class="hlider-cell">
+                    1
+                    </div>
+
+                    <div class="hlider-cell">
+                    2
+                    </div>
+
+                    <div class="hlider-cell">
+                    3
+                    </div>
+
+                    <div class="hlider-cell">
+                    4
+                    </div>
+
+                    <div class="hlider-cell">
+                    5
+                    </div>
+
+                     <div class="hlider-cell">
+                    6
+                    </div>
+                </div>
+  
+                <div class="total-menu">
+                    <a href="#" class="view">모든 카테고리 보기</a>
+                </div>
                     
             </div>
         </div>
@@ -150,6 +189,15 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
+     $('.hlider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: $('.next'),
+    prevArrow: $('.prev'),
+    });
+
     $('.slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -157,6 +205,6 @@
     autoplaySpeed: 3000,
     nextArrow: $('.next'),
     prevArrow: $('.prev'),
-    });
+    });  
 </script>
 {% endblock %}

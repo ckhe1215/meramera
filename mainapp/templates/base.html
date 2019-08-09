@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{% static '/css/base.css' %}">
         <link rel="stylesheet" href="{% static '/css/index.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <!-- favicon -->
         <link rel="shortcut icon" href="{% static '/img/favicon.png' %}">
 </head>
@@ -61,12 +62,12 @@
     
                             <li>
                                 <div class="search_wrap">
-                                        <div class="search">
-                                            <input type="text" class="searchTerm" placeholder="키워드로 상품 찾기">
-                                            <button type="submit" class="searchButton">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
+                                    <form action="." method="post" class="search">
+                                        {% csrf_token %}
+                                        {{ form.as_table }}
+                                        <input type="text" class="searchTerm" placeholder="키워드로 상품 찾기">
+                                        <input type="submit" class="searchButton" value="검색">
+                                    </form>
                                 </div>
                             </li>
                         </ul>         

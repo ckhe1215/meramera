@@ -1,3 +1,6 @@
+/* 레이아웃 */
+.container {height: 600px;}
+
 table{
     border: 1px solid rgb(218, 47, 218);
     width: 960px;

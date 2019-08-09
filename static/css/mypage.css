@@ -1,7 +1,5 @@
-.container .profile{
-    width : 700px;
-    margin : 20px auto;
-}
+/* 레이아웃 */
+.container .profile {margin : 20px auto;}
 
 .myPost{
     height: 300px;

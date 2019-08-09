@@ -4,6 +4,22 @@
 {% block content %}
 <link rel="stylesheet" type = "text/css" href="{% static '/css/write.css' %}"/>
 
+<<<<<<< HEAD
+<section id="write">
+    <div class="container" >
+        <div class="write">
+            <form method="POST" action="{% url 'write' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table">
+                    {{form.as_table}} 
+                </table>
+                <br>
+                <input class="btn btn-dark" type="submit" value="제출하기">
+            </form>
+        </write>
+    </div>
+</section>
+=======
 <div class ="container" >
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
@@ -15,4 +31,5 @@
     </form>
 </div>
 
+>>>>>>> 183db07d4217541eb7887ebb342765f7984c8cbf
 {% endblock %}

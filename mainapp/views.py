@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect, get_object_or_404
-from .models import Post
 from django.utils import timezone
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
+from django.views.generic.edit import FormView
+from .forms import PostSearchForm
+from django.db.models import Q
 
 
 # Create your views here.
@@ -12,7 +14,6 @@ def index(request):
 
 def search(request):
     return render(request, 'search.html')
-
 
 def detail(request, post_id):
     post_detail=get_object_or_404(Post, pk=post_id)
@@ -88,3 +89,19 @@ def delete_comment(request, post_id, comment_id):
 	if request.method == 'POST':
 		comment.delete()
 		return redirect('/detail/' + str(post.id))
+
+
+class searchFormView(FormView):
+	form_class = PostSearchForm
+	template_name = 'search.html'
+
+	def form_vaild(self, form):
+			schWord = '%s' % self.request.POST['search_word']
+			post_list = Post.objects.filter(Q(title__icontains=schWord) | Q(description__icontains=schWord) | Q(content__icontains=schWord)).distinct()
+
+			context = {}
+			context['form'] = form
+			context['search_form'] = schWord
+			context['object_list'] = post_list
+
+			return render(self.request, self.template_name, context)

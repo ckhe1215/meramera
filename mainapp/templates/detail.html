@@ -5,6 +5,14 @@
 <link rel="stylesheet" type = "text/css" href="{% static '/css/detail.css' %}"/>
 
 <div class="container">
+<<<<<<< HEAD
+    
+        <h2>{{post.title}}</h2>
+        <h4>{{post.author}}</h4>
+        <h4>{{post.pub_date}}</h4>
+    
+
+=======
     <div class="post-detail">
         <br><br>
         <h2><strong>{{post.title}}</strong></h2>
@@ -34,6 +42,7 @@
             </tr>
         </table>
     
+>>>>>>> 183db07d4217541eb7887ebb342765f7984c8cbf
     
 
     <form action="{% url 'edit' post.id %}" method="POST" >
@@ -70,5 +79,6 @@
 
 </div>
 </div>
+
 
 {% endblock %}
